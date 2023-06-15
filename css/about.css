@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
   }
-  
   .header {
     background-color: #ca926a;
     color: #ffffff;
@@ -15,24 +14,23 @@ body {
   }
   
   .header-title {
-    font-family: courier, monospace;
-    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
   }
   
   .navbar {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
   }
   
   .navbar a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #add8e6;
     color: #ffffff;
-    font-family: courier, monospace;
+    margin-left: 20px;
     text-decoration: none;
-    margin: 0 5px;
   }
   
   .content {
