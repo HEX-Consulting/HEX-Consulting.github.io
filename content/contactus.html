@@ -35,115 +35,120 @@
                     <!-- Times will be dynamically generated here -->
                 </ul>
             </div>
+            <div class="confirmation-section">
+                <h3>Confirmation</h3>
+                <p id="confirmation-info"></p>
+                <button id="confirmation-button" disabled>Submit</button>
+            </div>
         </div>
     </div>
 
     <script>
-          // Generate date options dynamically
-  function updateDateOptions() {
-    const dayList = document.querySelector('.day-list');
-    const today = new Date();
-    const daysToShow = 7; // Number of days to show
-    dayList.innerHTML = ''; // Clear previous options
+      // Generate date options dynamically
+      function updateDateOptions() {
+        const dayList = document.querySelector('.day-list');
+        const today = new Date();
+        const daysToShow = 7; // Number of days to show
+        dayList.innerHTML = ''; // Clear previous options
 
-    // Function to handle click event on a day
-    function handleDayClick(event) {
-      const selectedDay = event.target;
-      const allDays = dayList.querySelectorAll('li');
-      
-      allDays.forEach(day => {
-        if (day === selectedDay) {
-          day.classList.add('selected');
-        } else {
-          day.classList.remove('selected');
+        // Function to handle click event on a day
+        function handleDayClick(event) {
+          const selectedDay = event.target;
+          const allDays = dayList.querySelectorAll('li');
+          
+          allDays.forEach(day => {
+            if (day === selectedDay) {
+              day.classList.add('selected');
+            } else {
+              day.classList.remove('selected');
+            }
+          });
+          
+          // Enable time selection when a day is clicked
+          updateTimeOptions();
         }
-      });
-      
-      // Enable time selection when a day is clicked
-      updateTimeOptions();
-    }
 
-    for (let i = 0; i < daysToShow; i++) {
-      const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
-      const options = { weekday: 'long', month: 'long', day: 'numeric' };
-      const formattedDate = date.toLocaleDateString('en-US', options);
+        for (let i = 0; i < daysToShow; i++) {
+          const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
+          const options = { weekday: 'long', month: 'long', day: 'numeric' };
+          const formattedDate = date.toLocaleDateString('en-US', options);
 
-      const li = document.createElement('li');
-      li.textContent = formattedDate;
-      li.addEventListener('click', handleDayClick);
-      dayList.appendChild(li);
-    }
-  }
-
-  // Generate time options dynamically
-  function updateTimeOptions() {
-    const timeList = document.querySelector('.time-list');
-    const startTime = 9; // Start time (hour)
-    const endTime = 17; // End time (hour)
-    timeList.innerHTML = ''; // Clear previous options
-    
-    // Function to handle click event on a time
-    function handleTimeClick(event) {
-      const selectedTime = event.target;
-      const allTimes = timeList.querySelectorAll('li');
-      
-      allTimes.forEach(time => {
-        if (time === selectedTime) {
-          time.classList.add('selected');
-        } else {
-          time.classList.remove('selected');
+          const li = document.createElement('li');
+          li.textContent = formattedDate;
+          li.addEventListener('click', handleDayClick);
+          dayList.appendChild(li);
         }
-      });
-      
-      // Enable confirmation button when a time is clicked
-      enableConfirmationButton();
-    }
+      }
 
-    for (let i = startTime; i <= endTime; i++) {
-      const formattedTime = i + ':00 AM';
-      const li = document.createElement('li');
-      li.textContent = formattedTime;
-      li.addEventListener('click', handleTimeClick);
-      timeList.appendChild(li);
-    }
-  }
+      // Generate time options dynamically
+      function updateTimeOptions() {
+        const timeList = document.querySelector('.time-list');
+        const startTime = 9; // Start time (hour)
+        const endTime = 17; // End time (hour)
+        timeList.innerHTML = ''; // Clear previous options
+        
+        // Function to handle click event on a time
+        function handleTimeClick(event) {
+          const selectedTime = event.target;
+          const allTimes = timeList.querySelectorAll('li');
+          
+          allTimes.forEach(time => {
+            if (time === selectedTime) {
+              time.classList.add('selected');
+            } else {
+              time.classList.remove('selected');
+            }
+          });
+          
+          // Enable confirmation button when a time is clicked
+          enableConfirmationButton();
+        }
 
-  // Enable confirmation button
-  function enableConfirmationButton() {
-    const confirmationButton = document.getElementById('confirmation-button');
-    confirmationButton.disabled = false;
-  }
+        for (let i = startTime; i <= endTime; i++) {
+          const formattedTime = i + ':00 AM';
+          const li = document.createElement('li');
+          li.textContent = formattedTime;
+          li.addEventListener('click', handleTimeClick);
+          timeList.appendChild(li);
+        }
+      }
 
-  // Initialize the confirmation button
-  function initializeConfirmationButton() {
-    const confirmationButton = document.getElementById('confirmation-button');
-    confirmationButton.addEventListener('click', handleConfirmation);
-    confirmationButton.disabled = true;
-  }
+      // Enable confirmation button
+      function enableConfirmationButton() {
+        const confirmationButton = document.getElementById('confirmation-button');
+        confirmationButton.disabled = false;
+      }
 
-  // Handle confirmation event
-  function handleConfirmation() {
-    const selectedDay = document.querySelector('.day-list .selected');
-    const selectedTime = document.querySelector('.time-list .selected');
-    
-    if (selectedDay && selectedTime) {
-      const selectedDayText = selectedDay.textContent;
-      const selectedTimeText = selectedTime.textContent;
-      
-      const confirmationInfo = document.getElementById('confirmation-info');
-      confirmationInfo.textContent = `Selected Day: ${selectedDayText}, Selected Time: ${selectedTimeText}`;
-    }
-  }
+      // Initialize the confirmation button
+      function initializeConfirmationButton() {
+        const confirmationButton = document.getElementById('confirmation-button');
+        confirmationButton.addEventListener('click', handleConfirmation);
+        confirmationButton.disabled = true;
+      }
 
-  // Update date and time options
-  function updateOptions() {
-    updateDateOptions();
-    updateTimeOptions();
-    initializeConfirmationButton();
-  }
+      // Handle confirmation event
+      function handleConfirmation() {
+        const selectedDay = document.querySelector('.day-list .selected');
+        const selectedTime = document.querySelector('.time-list .selected');
+        
+        if (selectedDay && selectedTime) {
+          const selectedDayText = selectedDay.textContent;
+          const selectedTimeText = selectedTime.textContent;
+          
+          const confirmationInfo = document.getElementById('confirmation-info');
+          confirmationInfo.textContent = `Selected Day: ${selectedDayText}, Selected Time: ${selectedTimeText}`;
+        }
+      }
 
-  // Call updateOptions on page load
-  window.addEventListener('load', updateOptions);
+      // Update date and time options
+      function updateOptions() {
+        updateDateOptions();
+        updateTimeOptions();
+        initializeConfirmationButton();
+      }
+
+      // Call updateOptions on page load
+      window.addEventListener('load', updateOptions);
     </script>
 </body>
 </html>
