@@ -51,10 +51,12 @@ body {
 .appointment-box {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .calendar, .times {
   margin-right: 20px;
+  flex: 0 0 50%;
 }
 
 .calendar h3, .times h3 {
@@ -80,4 +82,8 @@ body {
 
 .time-list .selected {
   background-color: lightgrey;
+}
+.confirmation-section {
+  text-align: center;
+  margin-top: 20px;
 }
