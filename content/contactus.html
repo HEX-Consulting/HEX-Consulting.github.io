@@ -24,25 +24,56 @@
       
         <div class="appointment-box">
           <div class="calendar">
-              <h3>Select a Day</h3>
-              <ul class="day-list">
-                  <!-- Days will be dynamically generated here -->
-              </ul>
+            <h3>Select a Day</h3>
+            <ul class="day-list">
+              <!-- Days will be dynamically generated here -->
+            </ul>
           </div>
           <div class="times">
-              <h3>Available Times</h3>
-              <ul class="time-list">
-                  <!-- Times will be dynamically generated here -->
-              </ul>
+            <h3>Available Times</h3>
+            <ul class="time-list">
+              <!-- Times will be dynamically generated here -->
+            </ul>
           </div>
-      </div>
-      <div class="confirmation-section">
-          <h3>Confirmation</h3>
-          <p id="confirmation-info"></p>
-          <button id="confirmation-button" disabled>Submit</button>
-      </div>
-      
-    </div>
+          <div class="user-details">
+            <h3>User Details</h3>
+            <form id="user-details-form">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="business-needs">Business Needs:</label>
+                <select id="business-needs" name="business-needs">
+                  <option value="HR">Human Resources</option>
+                  <option value="TW">Technical Writer</option>
+                  <option value="FE">Front End Developer</option>
+                  <option value="R&D">Research and Development</option>
+                  <option value="PM">Project Manager</option>
+                  <option value="BE">Back End Developer</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="body">Body:</label>
+                <textarea id="body" name="body" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="confirmation-section">
+            <h3>Confirmation</h3>
+            <p id="confirmation-info"></p>
+            <button id="confirmation-button" disabled>Submit</button>
+          </div>
+        </div>
 
     <script>
       // Generate date options dynamically
