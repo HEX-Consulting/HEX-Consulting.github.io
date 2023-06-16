@@ -57,20 +57,20 @@ body {
     display: flex;
     align-items: center;
   }
-  
-  .image-section {
-    flex: 1;
-    text-align: left;
-  }
-  
   .text-section {
     flex: 2;
     padding: 0 20px;
     text-align: left;
   }
   
+  .image-section {
+    flex: 1;
+    text-align: right;
+  }
+  
   .resizable-image {
-    max-width: 50%;
+    max-width: 70%; /* Adjust the value to make the image bigger */
     height: auto;
+    margin-right: 50px; /* Adjust the value to move the image to the right */
   }
   
