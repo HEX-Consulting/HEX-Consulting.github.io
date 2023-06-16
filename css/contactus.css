@@ -1,36 +1,76 @@
 body {
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header {
-    background-color: #ca926a;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .header-title {
-    font-family: courier, monospace;
-    margin: 0;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navbar a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #add8e6;
-    color: #ffffff;
-    font-family: courier, monospace;
-    text-decoration: none;
-    margin: 0 5px;
-  }
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #ca926a;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-family: courier, monospace;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #add8e6;
+  color: #ffffff;
+  font-family: courier, monospace;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-heading {
+  margin-top: 0;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.appointment-box {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar, .times {
+  margin-right: 20px;
+}
+
+.calendar h3, .times h3 {
+  margin-top: 0;
+}
+
+.day-list, .time-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.day-list li, .time-list li {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.day-list li:hover, .time-list li:hover {
+  background-color: #add8e6;
+}

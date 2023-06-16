@@ -12,15 +12,59 @@
           <a href="projects.html">Projects</a>
           <a href="contactus.html">Contact Us</a>
         </div>
-      </div>
-  
-  <div class="content">
-    <h2 id="contact" class="contact-heading">Contact Us</h2>
-    <div class="contact-info">
-      <p>Email: hexconsulting@icloud.com</p>
-      <p>Phone: HEX-HEX-6HEX</p>
-      <p>Address: 123 Main Street, City, Country</p>
     </div>
-  </div>
+
+    <div class="content">
+        <h2 id="contact" class="contact-heading">Contact Us</h2>
+        <div class="contact-info">
+            <p>Email: hexconsulting@icloud.com</p>
+            <p>Phone: HEX-HEX-6HEX</p>
+            <p>Address: 123 Main Street, City, Country</p>
+        </div>
+      
+        <div class="appointment-box">
+            <div class="calendar">
+                <h3>Select a Day</h3>
+                <ul class="day-list">
+                    <!-- Days will be dynamically generated here -->
+                </ul>
+            </div>
+            <div class="times">
+                <h3>Available Times</h3>
+                <ul class="time-list">
+                    <!-- Times will be dynamically generated here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate date options dynamically
+        const dayList = document.querySelector('.day-list');
+        const today = new Date();
+        const daysToShow = 7; // Number of days to show
+
+        for (let i = 0; i < daysToShow; i++) {
+            const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
+            const options = { weekday: 'long', month: 'long', day: 'numeric' };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+
+            const li = document.createElement('li');
+            li.textContent = formattedDate;
+            dayList.appendChild(li);
+        }
+
+        // Generate time options dynamically
+        const timeList = document.querySelector('.time-list');
+        const startTime = 9; // Start time (hour)
+        const endTime = 17; // End time (hour)
+
+        for (let i = startTime; i <= endTime; i++) {
+            const formattedTime = i + ':00 AM';
+            const li = document.createElement('li');
+            li.textContent = formattedTime;
+            timeList.appendChild(li);
+        }
+    </script>
 </body>
 </html>
