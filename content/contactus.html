@@ -22,45 +22,39 @@
             <p>Address: 123 Main Street, City, Country</p>
         </div>
       
-        <div class="schedule-appointment">
-            <h3>Schedule an Appointment</h3>
-            <div class="calendar-container">
-                <div class="calendar">
-                    <ul class="day-list">
-                        <!-- Days will be dynamically generated here -->
-                    </ul>
-                </div>
-                <div class="time-slots">
-                    <ul class="time-list">
-                        <!-- Times will be dynamically generated here -->
-                    </ul>
-                </div>
+        <div class="appointment-box">
+            <div class="calendar">
+                <h3>Select a Day</h3>
+                <ul class="day-list">
+                    <!-- Days will be dynamically generated here -->
+                </ul>
+            </div>
+            <div class="times">
+                <h3>Available Times</h3>
+                <ul class="time-list">
+                    <!-- Times will be dynamically generated here -->
+                </ul>
             </div>
         </div>
     </div>
 
     <script>
-        function updateDateOptions() {
-            const dayList = document.querySelector('.day-list');
-            const today = new Date();
-            const daysToShow = 7; // Number of days to show
+        // Generate date options dynamically
+        const dayList = document.querySelector('.day-list');
+        const today = new Date();
+        const daysToShow = 7; // Number of days to show
 
-            dayList.innerHTML = ''; // Clear existing date options
+        for (let i = 0; i < daysToShow; i++) {
+            const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
+            const options = { weekday: 'long', month: 'long', day: 'numeric' };
+            const formattedDate = date.toLocaleDateString('en-US', options);
 
-            for (let i = 0; i < daysToShow; i++) {
-                const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
-                const options = { weekday: 'long', month: 'long', day: 'numeric' };
-                const formattedDate = date.toLocaleDateString('en-US', options);
-
-                const li = document.createElement('li');
-                li.textContent = formattedDate;
-                dayList.appendChild(li);
-            }
+            const li = document.createElement('li');
+            li.textContent = formattedDate;
+            dayList.appendChild(li);
         }
 
-        // Generate initial date and time options on page load
-        updateDateOptions();
-
+        // Generate time options dynamically
         const timeList = document.querySelector('.time-list');
         const startTime = 9; // Start time (hour)
         const endTime = 17; // End time (hour)
