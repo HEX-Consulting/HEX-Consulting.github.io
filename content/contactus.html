@@ -40,31 +40,46 @@
 
     <script>
         // Generate date options dynamically
-        const dayList = document.querySelector('.day-list');
-        const today = new Date();
-        const daysToShow = 7; // Number of days to show
+        function updateDateOptions() {
+            const dayList = document.querySelector('.day-list');
+            const today = new Date();
+            const daysToShow = 7; // Number of days to show
+            dayList.innerHTML = ''; // Clear previous options
 
-        for (let i = 0; i < daysToShow; i++) {
-            const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
-            const options = { weekday: 'long', month: 'long', day: 'numeric' };
-            const formattedDate = date.toLocaleDateString('en-US', options);
+            for (let i = 0; i < daysToShow; i++) {
+                const date = new Date(today.getTime() + (i * 24 * 60 * 60 * 1000));
+                const options = { weekday: 'long', month: 'long', day: 'numeric' };
+                const formattedDate = date.toLocaleDateString('en-US', options);
 
-            const li = document.createElement('li');
-            li.textContent = formattedDate;
-            dayList.appendChild(li);
+                const li = document.createElement('li');
+                li.textContent = formattedDate;
+                dayList.appendChild(li);
+            }
         }
 
         // Generate time options dynamically
-        const timeList = document.querySelector('.time-list');
-        const startTime = 9; // Start time (hour)
-        const endTime = 17; // End time (hour)
+        function updateTimeOptions() {
+            const timeList = document.querySelector('.time-list');
+            const startTime = 9; // Start time (hour)
+            const endTime = 17; // End time (hour)
+            timeList.innerHTML = ''; // Clear previous options
 
-        for (let i = startTime; i <= endTime; i++) {
-            const formattedTime = i + ':00 AM';
-            const li = document.createElement('li');
-            li.textContent = formattedTime;
-            timeList.appendChild(li);
+            for (let i = startTime; i <= endTime; i++) {
+                const formattedTime = i + ':00 AM';
+                const li = document.createElement('li');
+                li.textContent = formattedTime;
+                timeList.appendChild(li);
+            }
         }
+
+        // Update date and time options
+        function updateOptions() {
+            updateDateOptions();
+            updateTimeOptions();
+        }
+
+        // Call updateOptions on page load
+        window.addEventListener('load', updateOptions);
     </script>
 </body>
 </html>
