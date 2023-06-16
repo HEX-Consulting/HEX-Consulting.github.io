@@ -114,13 +114,15 @@ textarea {
   cursor: pointer;
   margin-bottom: 5px;
   padding: 5px;
-  background-color: #add8e6;
+  background-color: transparent;
   color: #ffffff;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
 .day-list li:hover,
 .time-list li:hover {
-  background-color: #9fc5e8;
+  background-color: #add8e6;
 }
 
 .day-list .selected,
