@@ -1,0 +1,32 @@
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.project img {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.project-description {
+    flex: 1;
+}
+
+.project-description h2 {
+    font-size: 24px;
+}
+
+.project-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.project-credit {
+    font-size: 14px;
+}
+
+.project-credit a {
+    margin-left: 10px;
+}
