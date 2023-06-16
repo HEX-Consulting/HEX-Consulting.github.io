@@ -98,44 +98,33 @@ textarea {
   height: 80px;
 }
 
-.calendar,
-.times {
-  margin-right: 0; /* Remove the right margin */
+.calendar, .times {
+  margin-right: 20px;
 }
-.calendar {
-  margin-bottom: 20px; /* Add bottom margin for spacing */
-}
-.calendar h3,
-.times h3 {
+
+.calendar h3, .times h3 {
   margin-top: 0;
-  margin-bottom: 10px; /* Adjust margin for spacing */
 }
 
-.day-list,
-.time-list {
-  display: inline-block; /* Change display to inline-block */
-  vertical-align: top; /* Align sections vertically */
-  margin-right: 20px; /* Add right margin for spacing between sections */
+.day-list, .time-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-
-.day-list li,
-.time-list li {
-  /* Adjust styling as needed */
+.day-list li, .time-list li {
   cursor: pointer;
   margin-bottom: 5px;
-  padding: 5px 10px;
-  background-color: #add8e6;
-  color: #ffffff;
 }
 
-.day-list li:hover,
-.time-list li:hover {
-  background-color: #9fc5e8; /* Adjust hover background color */
+.day-list li:hover, .time-list li:hover {
+  background-color: #add8e6;
 }
-.day-list .selected,
+.day-list .selected {
+  background-color: lightgrey;
+}
+
 .time-list .selected {
-  background-color: #ca926a; /* Adjust selected background color */
+  background-color: lightgrey;
 }
 
 .confirmation-section {
