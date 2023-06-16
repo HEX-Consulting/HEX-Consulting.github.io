@@ -54,21 +54,13 @@ body {
   padding: 20px;
   color: #ffffff;
 }
+
 .appointment-details {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.appointment-details {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.user-details {
-  flex: 1;
-  margin-left: 20px;
-  margin-top: 20px;
-}
+
 .user-details {
   flex: 1;
   margin-left: 20px;
@@ -98,33 +90,42 @@ textarea {
   height: 80px;
 }
 
-.calendar, .times {
+.calendar,
+.times {
+  flex: 1;
   margin-right: 20px;
 }
 
-.calendar h3, .times h3 {
+.calendar h3,
+.times h3 {
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
-.day-list, .time-list {
+.day-list,
+.time-list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
-.day-list li, .time-list li {
+.day-list li,
+.time-list li {
   cursor: pointer;
   margin-bottom: 5px;
-}
-
-.day-list li:hover, .time-list li:hover {
+  padding: 5px;
   background-color: #add8e6;
-}
-.day-list .selected {
-  background-color: lightgrey;
+  color: #ffffff;
 }
 
+.day-list li:hover,
+.time-list li:hover {
+  background-color: #9fc5e8;
+}
+
+.day-list .selected,
 .time-list .selected {
-  background-color: lightgrey;
+  background-color: #ca926a;
 }
 
 .confirmation-section {
