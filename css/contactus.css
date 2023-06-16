@@ -74,3 +74,10 @@ body {
 .day-list li:hover, .time-list li:hover {
   background-color: #add8e6;
 }
+.day-list .selected {
+  background-color: lightgrey;
+}
+
+.time-list .selected {
+  background-color: lightgrey;
+}
