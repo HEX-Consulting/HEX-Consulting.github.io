@@ -78,8 +78,10 @@ body {
 .appointment-box {
   background-color: yellow;
   padding: 20px;
-  margin-top: 20px;
   text-align: center;
+  position: absolute;
+  top: 100px;
+  right: 20px;
 }
 
 .appointment-button {
@@ -87,7 +89,7 @@ body {
   padding: 10px 20px;
   background-color: #add8e6;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: courier, monospace;
   text-decoration: none;
   margin-top: 10px;
 }
