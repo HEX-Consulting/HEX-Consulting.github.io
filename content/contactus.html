@@ -183,7 +183,10 @@
       }
 
       // Call updateOptions on page load
-      window.addEventListener('load', updateOptions);
+      window.addEventListener('load', function () {
+  updateOptions();
+  initializeConfirmationButton();
+});
     </script>
 </body>
 </html>
